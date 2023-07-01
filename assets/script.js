@@ -35,7 +35,7 @@ function generatePassword() {
   if (upperCaseask) {
     availableChar.push(...upperCase);
   }
-  console.log(availableChar);
+
   // ask if they what lowercase
   // confirm
   var lowerCaseAsk = confirm("Would you like lowercase letters");
@@ -43,7 +43,7 @@ function generatePassword() {
   if (lowerCaseAsk) {
     availableChar.push(...lowerCase);
   }
-  console.log(availableChar);
+
   // ask if they what special characters
   // confirm
   var specialCharAsk = confirm("Would you like special characters");
@@ -51,7 +51,7 @@ function generatePassword() {
   if (specialCharAsk) {
     availableChar.push(...specialChar);
   }
-  console.log(availableChar);
+
   // ask if they what numbers
   // confirm
   var numbersAsk = confirm("Would you like numbers");
@@ -59,7 +59,6 @@ function generatePassword() {
   if (numbersAsk) {
     availableChar.push(...numbersOptions);
   }
-  console.log(availableChar);
 
   // phase 2 building the password
   // create password variable and initialize as empty string
