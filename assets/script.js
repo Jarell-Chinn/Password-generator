@@ -33,29 +33,33 @@ function generatePassword() {
   // confirm
   // if user confirmed add upper case letters to available char
   if (upperCaseask) {
-    availableChar.push(upperCase);
+    availableChar.push(...upperCase);
   }
+  console.log(availableChar);
   // ask if they what lowercase
   // confirm
   var lowerCaseAsk = confirm("Would you like lowercase letters");
   // if user confirmed add lowercase letters to available char
   if (lowerCaseAsk) {
-    availableChar.push(lowerCase);
+    availableChar.push(...lowerCase);
   }
+  console.log(availableChar);
   // ask if they what special characters
   // confirm
   var specialCharAsk = confirm("Would you like special characters");
   // if user confirmed add special char to available char
   if (specialCharAsk) {
-    availableChar.push(specialChar);
+    availableChar.push(...specialChar);
   }
+  console.log(availableChar);
   // ask if they what numbers
   // confirm
   var numbersAsk = confirm("Would you like numbers");
   // if user confirmed add numbers to available char
   if (numbersAsk) {
-    availableChar.push(numbersOptions);
+    availableChar.push(...numbersOptions);
   }
+  console.log(availableChar);
 
   // phase 2 building the password
   // create password variable and initialize as empty string
@@ -68,6 +72,11 @@ function generatePassword() {
   // create a random number between 0-length of available char array
   // select and element from the array at the index of the random number
   // add that char to end of password
+  // needed to add a
+  if (!upperCaseask && !lowerCaseAsk && !specialCharAsk && !numbersAsk) {
+    alert("Please choose at least one character type");
+    return "";
+  }
 
   return password;
 }
