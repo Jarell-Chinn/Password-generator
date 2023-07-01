@@ -1,6 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var numbersOptions = "0123456789";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var specialChar = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 // Write password to the #password input
 function writePassword() {
   // Creating a variable and assigning a function return
@@ -14,9 +17,15 @@ function writePassword() {
 function generatePassword() {
   // phase 1 gathering info
   // create an empty array called available char
-
+  var availableChar = [];
   // ask the length of password
-  // prompt
+  var lengthofP = window.prompt(
+    "How many characters would you like your password (Must be larger than 8)"
+  );
+  if (lengthofP < 8 || lengthofP > 128) {
+    alert("Must be between 8 and 128");
+    return "";
+  }
   // ask if they what upper case
   // confirm
   // if user confirmed add upper case letters to available char
